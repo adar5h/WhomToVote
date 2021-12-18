@@ -7,3 +7,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background: #9053c7;
+  background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+.logo{
+  height:180px;
+  position:absolute;
+  left: 520px;
+  top: 20px;
+  -webkit-filter: blur(2px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.logo:hover{
+  -webkit-filter: blur(0);
+	filter: blur(0);
+}

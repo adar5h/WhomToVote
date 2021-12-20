@@ -1,4 +1,5 @@
-import img from '../assets/images/Capture.png'
+import img from '../assets/images/Capture.png';
+import { Link } from 'react-router-dom';
 function NavBar() {
     return(
         <div className="flex flex-col w-full bg-blue-900">
@@ -18,7 +19,9 @@ function NavBar() {
                     <span className="flex items-center gap-1 cursor-pointer text-gray-300 hover:text-white" >
                         About
                     </span>
-                    <button className="rounded bg-red-500 text-white px-4 py-1">Sign in</button>
+                    <Link to ={'/'}>
+                        <button  className="rounded bg-red-500 text-white px-4 py-1">Sign in</button>
+                    </Link>
                 </div>
             </div>
             

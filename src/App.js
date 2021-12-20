@@ -6,22 +6,11 @@ import HomePage from './Pages/HomePage';
 import CandidatesListPage from './Pages/CandidatesListPage';
 import CandidateInfoPage from './Pages/CandidateInfoPage';
 import NavBar from './Components/NavbarComponent';
-
-const Component1 = (props) =>{
+const DefaultLayout = ({Component},props) =>{
   return(
     <div>
       <NavBar />
-      <CandidatesListPage {...props}/>
-      <h1>Footer</h1>
-    </div>
-  )
-}
-const Component2 = (props) =>{
-  return(
-    <div>
-      <NavBar />
-      <CandidateInfoPage {...props}/>
-      <h1>Footer</h1>
+      <Component {...props}/>
     </div>
   )
 }
@@ -31,9 +20,9 @@ function App() {
     <Routes >
 
       <Route  path="/" exact element={<LoginPage />}/>
-      <Route path="/home" element={<HomePage />} />
-      <Route path="/CandidateList/:electiontype/:state/:constituency" element={<Component1 />} />
-      <Route path="/Candidate/:name" element={<Component2 />} />
+      <Route path="/home" element={<DefaultLayout Component={HomePage}/>} />
+      <Route path="/CandidateList/:electiontype/:state/:constituency" element={<DefaultLayout Component={CandidatesListPage}/>} />
+      <Route path="/Candidate/:name" element={<DefaultLayout Component={CandidateInfoPage}/>} />
     </Routes>
     );
 }
